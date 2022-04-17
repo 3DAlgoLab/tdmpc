@@ -1,13 +1,17 @@
 name: tdmpc
-channels:
-  - defaults
+channels:  
   - pytorch
+  - conda-forge
   - nvidia
+  - defaults  
 dependencies:
   - python=3.8
-  - pytorch=1.9.1
+  - pytorch
   - torchvision
-  - cudatoolkit=11.1
+  - torchaudio
+  - torchtext
+  - cudatoolkit=10.2
+
   - pip
   - pip:
       - termcolor
