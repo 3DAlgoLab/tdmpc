@@ -1,8 +1,11 @@
+import os 
+os.environ['DISPLAY'] = '0.0'
+
 import warnings
 warnings.filterwarnings('ignore')
-import os
 os.environ['MKL_SERVICE_FORCE_INTEL'] = '1'
-os.environ['MUJOCO_GL'] = 'egl'
+# os.environ['MUJOCO_GL'] = 'egl'
+os.environ['MUJOCO_GL'] = 'glfw'
 import torch
 import numpy as np
 import gym
@@ -96,5 +99,5 @@ def train(cfg):
     print('Training completed successfully')
 
 
-if __name__ == '__main__':
+if __name__ == '__main__':        
     train(parse_cfg(Path().cwd() / __CONFIG__))
